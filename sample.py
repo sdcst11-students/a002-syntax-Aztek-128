@@ -2,7 +2,7 @@ import turtle as t
 s = t.getscreen()
 td= t.Turtle
 t.bgcolor("skyblue")
-
+t.shapesize(0.0001)
 t.speed(100000)
 def house():
     t.penup()
@@ -81,12 +81,42 @@ def sun():
     t.circle(90)
     t.end_fill()
 
-        
+def ground():
+    t.penup()
+    t.goto(0,-50)
+    t.pendown()
+    t.fillcolor("green")
+    t.begin_fill()
+    t.lt(180)
+    t.circle(100000)
+    t.end_fill()
+
+
+def windows():
+    t.penup()
+    t.goto(-15,40)
+    t.pendown()
+    for i in range(4):
+        t.fd(50)
+        t.right(90)
+    t.fd(25)
+    t.rt(90)
+    t.fd(50)
+    t.rt(90)
+    t.fd(25)
+    t.rt(90)
+    t.fd(25)
+    t.rt(90)
+    t.fd(50)
+
+
 def main():
 
     house()
     clouds()
     sun()
+    ground()
+    windows()
 main()
 
 i = input()
